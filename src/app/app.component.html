@@ -16,6 +16,9 @@
         <div>
           <ul class="nav navbar-nav">
             <li routerLinkActive="active">
+              <a routerLink="/users">Users</a>
+            </li>
+            <li routerLinkActive="active">
               <a routerLink="/about">About</a>
             </li>
           </ul>
@@ -24,13 +27,20 @@
     </nav>
 
     <div class="container">
-      <!-- #routerOutlet="outlet" - access to the properties of router-outlet directive -->
-      <router-outlet
-        #routerOutlet="outlet"
-        (activate)='onActivate($event, routerOutlet)'
-        (deactivate)='onDeactivate($event, routerOutlet)'>
-      </router-outlet>
-      <!-- Routed views go here -->
+      <div class="col-md-10">
+        <!-- #routerOutlet="outlet" - access to the properties of router-outlet directive -->
+        <router-outlet
+          #routerOutlet="outlet"
+          (activate)='onActivate($event, routerOutlet)'
+          (deactivate)='onDeactivate($event, routerOutlet)'>
+        </router-outlet>
+        <!-- Routed views go here --> </div>
+      <div class="col-md-2">
+        <button class="btn btn-success"
+                *ngIf="!messagesService.isDisplayed"
+                (click)="onDisplayMessages()">Show Messages</button>
+        <router-outlet name="messages"></router-outlet>
+      </div>
     </div>
   </div>
 </div>
