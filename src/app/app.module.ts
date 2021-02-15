@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { TasksModule } from './tasks/tasks.module';
-import { UsersModule } from './users/users.module';
+import { SpinnerModule } from './widgets/spinner/spinner.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { UsersModule } from './users/users.module';
     FormsModule,
     LayoutModule,
     TasksModule,
-    UsersModule,
+    SpinnerModule.forRoot(),
     // MUST BE LAST
     AppRoutingModule,
   ],

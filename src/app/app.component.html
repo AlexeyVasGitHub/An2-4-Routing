@@ -19,6 +19,12 @@
               <a routerLink="/users">Users</a>
             </li>
             <li routerLinkActive="active">
+              <a routerLink="/admin">Admin</a>
+            </li>
+            <li routerLinkActive="active">
+              <a routerLink="/login">Login</a>
+            </li>
+            <li routerLinkActive="active">
               <a routerLink="/about">About</a>
             </li>
           </ul>
@@ -27,6 +33,7 @@
     </nav>
 
     <div class="container">
+      <app-spinner *ngIf="spinnerService.isVisible()"></app-spinner>
       <div class="col-md-10">
         <!-- #routerOutlet="outlet" - access to the properties of router-outlet directive -->
         <router-outlet
